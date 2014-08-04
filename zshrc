@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/Cellar/subversion/1.8.9/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -83,8 +83,13 @@ alias ldot='ls -ld .*'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias h='history'
+alias relay='ssh hanpeng03@relay00.baidu.com'
+alias vsp='ssh han@106.185.25.253'
 
 #hashs
 hash -d nconf='/usr/local/etc/nginx/'
 hash -d conf='/usr/local/etc/'
 
+#nvm
+export NVM_DIR="/Users/han/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
