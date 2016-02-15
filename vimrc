@@ -100,47 +100,18 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
-" tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
+" vim-ident-guides
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 " easy-motion
 let g:EasyMotion_leader_key = '<leader>'
-
-" Tagbar
-let g:tagbar_left=1
-let g:tagbar_width=30
-let g:tagbar_autofocus = 1
-let g:tagbar_sort = 0 
-let g:tagbar_compact = 1
-" tag for coffee
-if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-        \ }
-
-  let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'sort' : 0,
-    \ 'kinds' : [
-        \ 'h:sections'
-    \ ]
-    \ }
-endif
 
 " Nerd Tree 
 let NERDChristmasTree=0
@@ -149,53 +120,21 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "right"
-
-" ZenCoding
-let g:user_zen_expandabbr_key='<C-j>'
+let NERDTreeWinPos = "left"
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'full'
-
-" NeoComplCache
-"let g:neocomplcache_enable_at_startup=1
-"let g:neoComplcache_disableautocomplete=1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_enable_camel_case_completion = 1
-"let g:neocomplcache_enable_smart_case=1
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-"set completeopt-=preview
-
-"imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-"smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-"imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-"smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
 let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 let g:SuperTabRetainCompletionType=2
 
-" ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-
 " Keybindings for plugin toggle
-nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nnoremap <leader>a :Ack
-nnoremap <leader>v V`]
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j

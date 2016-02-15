@@ -6,16 +6,13 @@
 
 1.dot文件
 ```
-git clone https://github.com/haharazer/dotfile/blob/master/vimrc ~/.vimrc
-git clone https://github.com/haharazer/dotfile/blob/master/vim ~/.vim
+git clone https://github.com/haharazer/dotfile
+cp -r vim ~/.vim
+cp vimrc ~/.vimrc
 ```
 
 2.安装插件
-```
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-```
-
-3.打开wim
+打开vim
 ```
 :BundleInstall
 ```
