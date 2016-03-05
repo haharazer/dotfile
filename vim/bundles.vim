@@ -29,7 +29,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'kana/vim-smartinput'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/nerdcommenter' "快速注释
+Bundle 'scrooloose/nerdcommenter'
 
 "--------------
 " IDE features

@@ -11,7 +11,12 @@ cp -r vim ~/.vim
 cp vimrc ~/.vimrc
 ```
 
-2.安装插件
+2.安装vundle
+```
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+```
+
+3.安装插件
 打开vim
 ```
 :BundleInstall
